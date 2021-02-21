@@ -22,14 +22,13 @@ func Number() {
 
 func validateInput() (int, error) {
 	var s string
-	var n int64
 
-	_, err := fmt.Scan(&s)
-	n, err = strconv.ParseInt(s, 10, 64)
+	_, errScan := fmt.Scan(&s)
+	n, err := strconv.ParseInt(s, 10, 64)
 	if n < 0 || n > 999 {
 		err = errors.New("wrong number")
 	}
-	if err != nil {
+	if errScan != nil || err != nil {
 		fmt.Println("Число должно быть от 0 до 999!")
 	}
 	return int(n), err
