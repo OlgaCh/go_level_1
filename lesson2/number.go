@@ -17,7 +17,7 @@ func Number() {
 	dozens := (n / 10 >> 0) % 10
 	units := n % 10
 
-	log(hundreds, dozens, units)
+	printNumberParts(hundreds, dozens, units)
 }
 
 func validateInput() (int, error) {
@@ -34,7 +34,7 @@ func validateInput() (int, error) {
 	return int(n), err
 }
 
-func log(hundreds int, dozens int, units int) {
+func printNumberParts(hundreds int, dozens int, units int) {
 	labels := [3]string{"Сотен", "Десятков", "Единиц"}
 	parts := [3]int{hundreds, dozens, units}
 
