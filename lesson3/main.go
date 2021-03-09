@@ -3,10 +3,11 @@ package main
 import (
 	"fmt"
 	"log"
-	"math"
 	"math/big"
 	"time"
 )
+
+const iterations = 1000000
 
 func main() {
 	fmt.Println("Go Math/Big")
@@ -23,7 +24,7 @@ func timeTrack(start time.Time, name string) {
 func goPrimeImpl() {
 	defer timeTrack(time.Now(), "Go Prime")
 	totalPrimeNumbers := 0
-	for i := 0; i <= int(math.Pow(10, 6)); i++ {
+	for i := 0; i <= iterations; i++ {
 		if big.NewInt(int64(i)).ProbablyPrime(10) {
 			totalPrimeNumbers++
 		}
@@ -34,7 +35,7 @@ func goPrimeImpl() {
 func customPrimeImpl() {
 	defer timeTrack(time.Now(), "Custom Prime")
 	totalPrimeNumbers := 0
-	for i := 0; i <= int(math.Pow(10, 6)); i++ {
+	for i := 0; i <= iterations; i++ {
 		if isPrime(i) {
 			totalPrimeNumbers++
 		}
