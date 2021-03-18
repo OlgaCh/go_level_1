@@ -78,11 +78,15 @@ func parseConfigFromFile(filePath string) (*Config, error) {
 		return &c, err
 	}
 
-	switch strings.ToLower(path.Ext(filePath)) {
-	case "yaml, yml":
+	fileSuffix := strings.ToLower(path.Ext(filePath))[1:]
+
+	switch fileSuffix {
+	case "yaml", "yml":
 		err = yaml.Unmarshal(b, &c)
 	case "json":
 		err = json.Unmarshal(b, &c)
+	default:
+		return &c, err
 	}
 
 	return &c, err
