@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./config"
+	"github.com/OlgaCh/go_level_1/lesson8/config"
 	"log"
 )
 
