@@ -1,4 +1,4 @@
-package main
+package methods
 
 import (
 	"fmt"
@@ -13,9 +13,17 @@ func Circle() {
 	}
 
 	radius := math.Sqrt(a / math.Pi)
-	diameter := 2 * radius
-	length := diameter * math.Pi
+	diameter := getDiameter(radius)
+	length := getLength(diameter)
 
 	fmt.Println("Диаметр:", diameter)
 	fmt.Println("Длина окружности:", length)
+}
+
+func getDiameter(radius float64) float64 {
+	return 2 * radius
+}
+
+func getLength(diameter float64) float64 {
+	return diameter * math.Pi
 }
