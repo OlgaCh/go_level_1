@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/OlgaCh/go_level_1/lesson2/methods"
+)
 
 func main() {
 	fmt.Println("Выберите вариант программы: [1, 2, 3, 4, 5]")
@@ -15,15 +18,15 @@ func main() {
 
 	switch option {
 	case "1":
-		Rectangle()
+		methods.Rectangle()
 	case "2":
-		Circle()
+		methods.Circle()
 	case "3":
-		Number()
+		methods.Number()
 	case "4":
-		Calculator()
+		methods.Calculator()
 	case "5":
-		PrimeNumber()
+		methods.PrimeNumber()
 	default:
 		fmt.Println("Неизвестная опция ", option)
 	}
